@@ -3,15 +3,19 @@ const ROTVALUE = 13;
 const letterList = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
 function rot13(message){
-	let rotResult;
+	let rotResult = '';
 	let rotLetter;
-	let rotLetterIndex;
-	let originalLetterIndex;
- 	message.split('').forEach((letter) => {
-		letterIndex = letterList.indexOf(letter.toLowerCase()) + 1;
-		rotLetterIndex = (letterIndex > 26 - ROTVALUE) ? letterList.indexOf(ROTVALUE - (26 - letterIndex)) : letterList.indexOf(letterIndex + ROTVALUE);
-		rotLetter = letterList[rotLetterIndex];
-		rotResult += (letter.toLowerCase() !== letter) ? rotLetter.toUpperCase() : rotLetter
+	let rotLetterAlphabetPos;
+	let originalLetterAlphabetPos;
+ 	message.split('').forEach((char) => {
+    if (letterList.includes(char.toLowerCase())) {
+      originalLetterAlphabetPos = letterList.indexOf(char.toLowerCase()) + 1;
+      rotLetterAlphabetPos = (originalLetterAlphabetPos > 26 - ROTVALUE) ? ROTVALUE - (26 - originalLetterAlphabetPos) : originalLetterAlphabetPos + ROTVALUE;
+      rotLetter = letterList[rotLetterAlphabetPos - 1];
+      rotResult += (char.toLowerCase() !== char) ? rotLetter.toUpperCase() : rotLetter
+    } else {
+      rotResult += char
+    }
 	}); 
 	return rotResult
 }
