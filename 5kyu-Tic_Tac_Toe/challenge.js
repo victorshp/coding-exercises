@@ -1,5 +1,10 @@
 function isSolved(board) {
-	const [x, y] = [1, 2];
+	const [x, y] = [[], []];
+	board.forEach((row, rowIndex) => {
+		row.forEach((cell, columIndex) => {
+			
+		})
+	});
 }
 /*
 describe("Tests", () => {
