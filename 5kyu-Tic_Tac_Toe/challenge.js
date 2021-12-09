@@ -2,7 +2,8 @@ function isSolved(board) {
 	const [x, y] = [[], []];
 	board.forEach((row, rowIndex) => {
 		row.forEach((cell, columIndex) => {
-			if (cell === 1) x.push([rowIndex, columnIndex])	
+			if (cell === 1) x.push([rowIndex, columnIndex])
+			if (cell === 2) y.push([rowIndex,columnIndex])
 		})
 	});
 }
