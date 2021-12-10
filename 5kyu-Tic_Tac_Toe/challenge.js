@@ -6,6 +6,7 @@ function isSolved(board) {
 			if (cell === 2) y.push([rowIndex,columnIndex])
 		})
 	});
+	if (x.length + y.length === 9) return 0
 }
 /*
 describe("Tests", () => {
