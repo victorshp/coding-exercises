@@ -1,6 +1,6 @@
 # Coding Exercises
 
-This repo contains coding exercises I find that are good to maintain, either because I learned valuable things or it was challenging.
+This repo contains coding exercises I find that are good to maintain, either because I learned valuable things or presented some challenge.
 
 ## Sources
 
